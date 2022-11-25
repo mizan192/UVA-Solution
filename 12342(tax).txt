@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int T,k,tax,i;
+scanf("%d",&T);
+for(i=1;i<=T;i++){
+scanf("%d",&k);
+    if(k>180000)
+        if(k>480000)
+            if(k>880000)
+                if(k>1180000)
+                {
+                    tax=ceil(150000+((k-1180000)*.25));
+                }
+                else
+                    tax=ceil(90000+((k-880000)*.20));
+            else
+                tax=ceil((30000+((k-480000)*.15)));
+        else{
+            tax=(((k-180000)*.10));
+            if(tax<2000)
+                tax=2000;
+            }
+    else
+        tax = 0;
+        printf("Case %d: %d\n",i,tax);
+}
+return 0;
+}
